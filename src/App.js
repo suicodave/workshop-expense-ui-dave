@@ -24,11 +24,11 @@ function App() {
   const [date, setDate] = useState(
     new Date(Date.now()).toLocaleDateString("en-CA")
   );
-  
+
   const [onSuccessfulSave, setOnSuccessfulSave] = useState(false);
 
   const fetchExpenses = async () => {
-    const apiUrl = "https://workshop-expense-api-dave.onrender.com";
+    const apiUrl = process.env.REACT_APP_API_URL;
 
     const endpoint = `${apiUrl}/api/expenses`;
 
@@ -46,7 +46,7 @@ function App() {
   const saveExpense = async (event) => {
     event.preventDefault();
 
-    const apiUrl = "https://workshop-expense-api-dave.onrender.com";
+    const apiUrl = process.env.REACT_APP_API_URL;
 
     const endpoint = `${apiUrl}/api/expenses`;
 
